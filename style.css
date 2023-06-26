@@ -1,0 +1,345 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth;
+
+}
+a{
+    text-decoration: none;
+    color: #333;
+}
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-image: url(star\ background.jpg);
+    background-size: cover;
+    color: #fff;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(61, 61, 255);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  list-style: none;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+}
+header li a  img{
+  max-width: 36px;
+  margin-left: 10px;
+}
+::-webkit-scrollbar{
+  width: 12px;
+}
+::-webkit-scrollbar-track{
+  background: white;
+  border: solid .1px #333;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb{
+  background: linear-gradient(green,transparent,blue);
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover{
+  background: linear-gradient(blue,transparent,green);
+}
+span{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#load{
+  width: 60px;
+  height: 60px;
+  border: solid 6px #333;
+  border-radius: 100%;
+  border-top: solid 6px transparent;
+  animation: loading 1s infinite;
+}
+@keyframes loading {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+.disappear{
+  animation: vanish .5s forwards;
+}
+@keyframes vanish {
+  100%{
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+main{
+  margin-left: 4px;
+  animation: loaded .75s;
+}
+@keyframes loaded {
+  from{
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+main h1{
+  text-align: center;
+}
+section{
+  height: 100vh;
+  display: flex;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  scroll-snap-align: center;
+  padding: 5px;
+}
+section div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 90%;
+  background: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(6.9px);
+  -webkit-backdrop-filter: blur(6.9px);
+  padding: 10px;
+  border-radius: 8px;
+}
+#topic, #thanks{
+  display: flex;
+  align-items: center;
+  width: 98vw;
+  height: 97vh;
+  margin: auto;
+}
+#topic img{
+  width: 150px;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  z-index: 2;
+}
+nav ul li a {
+  margin-left: 20px;
+  color: #333;
+  text-decoration: none;
+}
+nav ul li a:hover{
+  text-decoration: underline;
+  color: rgb(207, 204, 200);
+}
+p{
+  margin-bottom: 1rem;
+}
+#active{
+  color: #fff
+}
+#open {
+  display: none;
+}
+#close{
+  display: none;
+}
+.carousel-container {
+  position: relative;
+}
+.carousel {
+  display: flex;
+  overflow: hidden;
+}
+
+.carousel-item {
+  display: flex;
+  flex: 0 0 100%;
+  flex-direction: column;
+  transition: transform 0.3s ease-in-out;
+  height: 90vh;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
+.carousel-item img {
+  width: auto;
+  height: 85vh;
+  pointer-events: none;
+}
+
+.caption {
+  text-align: center;
+  color: #333;
+  background-color: aliceblue;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.carousel-arrows {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.arrow {
+  font-size: 24px;
+  cursor: pointer;
+  height: 40px;
+}
+
+.arrow:hover{
+  background-color: #fff;
+  color: white;
+}
+.arrow-left {
+  transform: rotate(180deg);
+}
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.9px);
+  -webkit-backdrop-filter: blur(6.9px);
+}
+
+form label {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #fff;
+}
+form input::placeholder{
+  color: #3e8e41;
+  font-family: 'Courier New', Courier, monospace;
+}
+form input[type="email"],
+form input[type="password"],
+form input[type="text"] {
+  display: block;
+  width: 90%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+form input[type="submit"] {
+  background-color: #4caf50;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+footer{
+  text-align: center;
+  background-color: #333;
+  color: white;
+}
+footer p{
+  margin: auto;
+}
+h3{
+  text-decoration: underline;
+}
+#to-top{
+  position: fixed;
+  bottom: 16px;
+  right: 32px;
+  width: 50px;
+  height: 50px;
+  background-color: rgb(235, 235, 235);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  border-radius: 50%;
+  text-decoration: none;
+  color: #333;
+}
+@media(max-width:790px) {
+  nav ul{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: -2000px;
+    left: 0%;
+    transition: .5s;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(133, 133, 240); 
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+  }
+  nav ul li {
+    color: whitesmoke;
+    padding: 40px;
+  }
+  nav ul li a {
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  section{
+    flex-direction: column;
+  }
+  #topic, #thanks{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  section div{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  #open {
+    display: block;
+    width: 18px;
+    cursor: pointer;
+  }
+  #close{
+    display: block;
+    cursor: pointer;
+  }
+  .carousel-item img{
+    width: 90%;
+    object-fit: contain;
+  }
+}
